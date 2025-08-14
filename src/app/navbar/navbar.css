@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 1px 2px gray;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+}
+
+/* Center the nav items with 25% padding on both sides */
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%; /* = 100% - 25% left - 25% right */
+  min-width: 600px; /* optional: prevent crowding on small screens */
+}
+
+/* Nav items */
+.nav-item {
+  text-align: center;
+}
+
+/* Larger visual logo without changing layout height */
+.logo {
+  margin-top: 50%;
+  height: 40px;
+  transform: scale(4.5); /* Adjust as needed */
+  transform-origin: center;
+  vertical-align: middle;
+}
+
+/* Style the links */
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  line-height: 60px;
+  display: inline-block;
+}
+
+.nav-item a:hover {
+  color: #007bff;
+}
