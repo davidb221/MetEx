@@ -11,30 +11,26 @@
   z-index: 1000;
 }
 
-/* Center the nav items with 25% padding on both sides */
 .nav-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%; /* = 100% - 25% left - 25% right */
-  min-width: 600px; /* optional: prevent crowding on small screens */
+  width: 50%; 
+  min-width: 600px; 
 }
 
-/* Nav items */
 .nav-item {
   text-align: center;
 }
 
-/* Larger visual logo without changing layout height */
 .logo {
   margin-top: 50%;
   height: 40px;
-  transform: scale(4.5); /* Adjust as needed */
+  transform: scale(4.5); 
   transform-origin: center;
   vertical-align: middle;
 }
 
-/* Style the links */
 .nav-item a {
   text-decoration: none;
   color: #333;
@@ -45,5 +41,5 @@
 }
 
 .nav-item a:hover {
-  color: #007bff;
+  color: #0e4fa6;
 }
