@@ -1,0 +1,18 @@
+<section class="faq-container">
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="faq" *ngFor="let faq of faqs; let i = index">
+    <button
+      class="faq-question"
+      (click)="toggleFaq(i)"
+      [attr.aria-expanded]="faq.open"
+    >
+      {{ faq.question }}
+      <span class="icon">{{ faq.open ? '−' : '+' }}</span>
+    </button>
+
+    <div class="faq-answer" [class.open]="faq.open">
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+</section>
