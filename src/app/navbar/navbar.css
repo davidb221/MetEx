@@ -24,9 +24,8 @@
 }
 
 .logo {
-  margin-top: 25%;
+  margin-top: 2.5%;
   height: 40px;
-  transform: scale(5); 
   transform-origin: center;
   vertical-align: middle;
 }
