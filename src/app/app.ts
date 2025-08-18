@@ -10,9 +10,7 @@ import { Footer } from './footer/footer';
   template: `
     <app-navbar></app-navbar>
 
-    <main class="main-content">
-      <router-outlet></router-outlet>
-    </main>
+    <router-outlet></router-outlet>
 
     <app-footer></app-footer>
   `,
