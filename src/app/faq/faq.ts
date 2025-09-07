@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-faq',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './faq.html',
   styleUrl: './faq.css'
 })
+
 export class Faq {
   faqs = [
     {
@@ -48,5 +50,43 @@ export class Faq {
 
   toggleFaq(index: number) {
     this.faqs[index].open = !this.faqs[index].open;
+  }
+
+  success = false;
+  error = false;
+
+  onSubmit(form: NgForm) {
+    if (form.invalid) return;
+
+    const formData = new FormData();
+    for (const key in form.value) {
+      formData.append(key, form.value[key]);
+    }
+    formData.append('access_key', '1788301e-86ea-4937-8d7e-fda0abf9d77a');
+    formData.append('from_name', 'MetEx Contact Form');
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        this.success = true;
+        this.error = false;
+        form.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    })
+    .catch(() => {
+      this.success = false;
+      this.error = true;
+    });
+
+    // Hide message after 5s
+    setTimeout(() => {
+      this.success = false;
+      this.error = false;
+    }, 5000);
   }
 }
