@@ -1,55 +1,68 @@
 <body>
-    <div class="estimate-container">
-        <h2>Shipping Estimate</h2>
 
-        <form (ngSubmit)="calculateEstimate()" #estimateForm="ngForm">
-            <div class="form-group">
-            <label>From:</label>
-            <input type="text" [(ngModel)]="fromLocation" name="from" required />
-            </div>
+  <p class="intro">
+    At MetEx Delivery, we specialize in providing fast, secure, and reliable shipping solutions tailored to both individuals and businesses.
+    Whether you're sending packages locally or internationally, from the U.S. to Africa and beyond, our logistics network ensures timely and safe deliveries every time.
+    Customers enjoy the convenience of door-to-door service, with scheduled pickups available across select regions. Once our physical location opens, in-person package drop-off will become standard with scheduled pickup remaining as a premium option.
+    From providing business shipping solutions to offering same-day local courier services, MetEx is your trusted partner in seamless shipping and logistics.
+    With a commitment to excellence, innovation, and customer satisfaction, we deliver more than just packages, we deliver peace of mind.
+  </p>
 
-            <div class="form-group">
-            <label>To:</label>
-            <input type="text" [(ngModel)]="toLocation" name="to" required />
-            </div>
+  <div class="estimate-container">
+    <h2>Shipping Estimate Calculator</h2>
 
-            <div class="form-group">
-            <label>Length (in):</label>
-            <input type="number" [(ngModel)]="length" name="length" required />
-            </div>
-
-            <div class="form-group">
-            <label>Width (in):</label>
-            <input type="number" [(ngModel)]="width" name="width" required />
-            </div>
-
-            <div class="form-group">
-            <label>Height (in):</label>
-            <input type="number" [(ngModel)]="height" name="height" required />
-            </div>
-
-            <div class="form-group">
-            <label>Weight (lbs):</label>
-            <input type="number" [(ngModel)]="weight" name="weight" required />
-            </div>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <div *ngIf="showEstimates" class="estimate-result">
-            <h3>Shipping Options</h3>
-
-            <div class="option">
-            <h4>Standard Shipping</h4>
-            <p><strong>Cost:</strong> ${{ standardCost }}</p>
-            <p><strong>Estimated Delivery:</strong> {{ standardDelivery }}</p>
-            </div>
-
-            <div class="option">
-                <h4>Expedited Shipping</h4>
-                <p><strong>Cost:</strong> ${{ expeditedCost }}</p>
-                <p><strong>Estimated Delivery:</strong> {{ expeditedDelivery }}</p>
-            </div>
+    <form (ngSubmit)="calculateEstimate()" #estimateForm="ngForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>From:</label>
+          <input type="text" [(ngModel)]="fromLocation" name="from" required />
         </div>
+
+        <div class="form-group">
+          <label>To:</label>
+          <input type="text" [(ngModel)]="toLocation" name="to" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Length (in):</label>
+          <input type="number" [(ngModel)]="length" name="length" required />
+        </div>
+
+        <div class="form-group">
+          <label>Width (in):</label>
+          <input type="number" [(ngModel)]="width" name="width" required />
+        </div>
+
+        <div class="form-group">
+          <label>Height (in):</label>
+          <input type="number" [(ngModel)]="height" name="height" required />
+        </div>
+
+        <div class="form-group">
+          <label>Weight (lbs):</label>
+          <input type="number" [(ngModel)]="weight" name="weight" required />
+        </div>
+      </div>
+
+      <button type="submit">Get Estimate</button>
+    </form>
+
+    <div *ngIf="showEstimates" class="estimate-result">
+      <h3>Shipping Options</h3>
+
+      <div class="option">
+        <h4>Standard Shipping</h4>
+        <p><strong>Cost:</strong> ${{ standardCost }}</p>
+        <p><strong>Estimated Delivery:</strong> {{ standardDelivery }}</p>
+      </div>
+
+      <div class="option">
+        <h4>Expedited Shipping</h4>
+        <p><strong>Cost:</strong> ${{ expeditedCost }}</p>
+        <p><strong>Estimated Delivery:</strong> {{ expeditedDelivery }}</p>
+      </div>
     </div>
+  </div>
 </body>
