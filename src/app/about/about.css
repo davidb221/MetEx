@@ -42,3 +42,26 @@
   font-size: 1rem;
   line-height: 1.8;
 }
+
+.with-image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.with-image .text-content {
+  flex: 1 1 50%;
+}
+
+.with-image .image-content {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.with-image .image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
