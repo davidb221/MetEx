@@ -14,13 +14,21 @@
     <form (ngSubmit)="calculateEstimate()" #estimateForm="ngForm">
       <div class="form-row">
         <div class="form-group">
-          <label>From:</label>
-          <input type="text" [(ngModel)]="fromLocation" name="from" required />
+          <label for="from">From:</label>
+          <select [(ngModel)]="fromLocation" name="from" required>
+            <option value="" disabled selected>Select a location</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Dallas-Fort Worth">Dallas-Fort Worth</option>
+          </select>
         </div>
 
         <div class="form-group">
-          <label>To:</label>
-          <input type="text" [(ngModel)]="toLocation" name="to" required />
+          <label for="to">To:</label>
+          <select [(ngModel)]="toLocation" name="to" required>
+            <option value="" disabled selected>Select a destination</option>
+            <option value="Democratic Republic of Congo">Democratic Republic of Congo</option>
+            <option value="Ivory Coast">Ivory Coast</option>
+          </select>
         </div>
       </div>
 
@@ -42,8 +50,17 @@
 
         <div class="form-group">
           <label>Weight (lbs):</label>
-          <input type="number" [(ngModel)]="weight" name="weight" required />
+          <input type="number" [(ngModel)]="weight" name="weight" required min="2" max="50" />
         </div>
+
+        <div class="form-group">
+          <label>Declared Value (USD):</label>
+          <input type="number" [(ngModel)]="declaredValue" name="declaredValue" min="0" required />
+          <small *ngIf="declaredValue > 100" style="color: #cc0000; font-weight: 600;">
+            * Insurance is required for items valued over $100.
+          </small>
+        </div>
+
       </div>
 
       <button type="submit">Get Estimate</button>
