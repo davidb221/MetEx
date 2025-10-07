@@ -13,22 +13,17 @@ export class Faq {
   faqs = [
     {
       question: 'What areas in Africa do you ship to?',
-      answer: 'We currently ship to several major cities across West and East Africa including Lagos, Accra, Nairobi, and more. Reach out for specific destinations.',
+      answer: 'We currently ship to the Democratic Republic of Congo and Ivory Coast. We intend to expand to more countries.',
       open: false
     },
     {
       question: 'How long does shipping take?',
-      answer: 'Shipping typically takes 7–14 business days depending on destination and customs clearance.',
-      open: false
-    },
-    {
-      question: 'Can I track my package?',
-      answer: 'Yes! Every package is assigned a tracking number once shipped. You can track it via our website or by contacting customer service.',
+      answer: 'Shipping typically takes 5–10 business days depending on destination and customs clearance.',
       open: false
     },
     {
       question: 'Do you offer pickup services in Dallas-Fort Worth?',
-      answer: 'Absolutely. We provide pickup across the DFW metroplex. You can schedule a pickup during checkout.',
+      answer: 'Absolutely. We provide pickup across the DFW metroplex. You can schedule a pickup by contacting customer service through phone or email.',
       open: false
     },
     {
@@ -38,7 +33,7 @@ export class Faq {
     },
     {
       question: 'Do you offer insurance on shipments?',
-      answer: 'Yes, you can purchase optional insurance during checkout to protect your package in case of loss or damage.',
+      answer: 'Yes, you can purchase optional insurance during checkout to protect your package in case of loss or damage. Items with a declared value of $100 or more will be required to purchase insurance.',
       open: false
     },
     {
