@@ -9,13 +9,13 @@
   </p>
 
   <div class="estimate-container">
-    <h2>Shipping Estimate Calculator</h2>
+    <h2>Request a Quote</h2>
 
-    <form (ngSubmit)="calculateEstimate()" #estimateForm="ngForm">
+    <form #quoteForm="ngForm" (ngSubmit)="onSubmit(quoteForm)" novalidate>
       <div class="form-row">
         <div class="form-group">
           <label for="from">From:</label>
-          <select [(ngModel)]="fromLocation" name="from" required>
+          <select [(ngModel)]="fromLocation" name="fromLocation" required>
             <option value="" disabled selected>Select a location</option>
             <option value="Seattle">Seattle</option>
             <option value="Dallas-Fort Worth">Dallas-Fort Worth</option>
@@ -24,7 +24,7 @@
 
         <div class="form-group">
           <label for="to">To:</label>
-          <select [(ngModel)]="toLocation" name="to" required>
+          <select [(ngModel)]="toLocation" name="toLocation" required>
             <option value="" disabled selected>Select a destination</option>
             <option value="Democratic Republic of Congo">Democratic Republic of Congo</option>
             <option value="Ivory Coast">Ivory Coast</option>
@@ -56,30 +56,17 @@
         <div class="form-group">
           <label>Declared Value (USD):</label>
           <input type="number" [(ngModel)]="declaredValue" name="declaredValue" min="0" required />
-          <small *ngIf="declaredValue > 100" style="color: #cc0000; font-weight: 600;">
+          <small *ngIf="declaredValue > 100" style="color: #ffcccc; font-weight: 600;">
             * Insurance is required for items valued over $100.
           </small>
         </div>
-
       </div>
 
-      <button type="submit">Get Estimate</button>
+      <button type="submit">Submit Request</button>
     </form>
 
-    <div *ngIf="showEstimates" class="estimate-result">
-      <h3>Shipping Options</h3>
-
-      <div class="option">
-        <h4>Standard Shipping</h4>
-        <p><strong>Cost:</strong> ${{ standardCost }}</p>
-        <p><strong>Estimated Delivery:</strong> {{ standardDelivery }}</p>
-      </div>
-
-      <div class="option">
-        <h4>Expedited Shipping</h4>
-        <p><strong>Cost:</strong> ${{ expeditedCost }}</p>
-        <p><strong>Estimated Delivery:</strong> {{ expeditedDelivery }}</p>
-      </div>
-    </div>
+    <div *ngIf="success" class="popup success-popup">Quote request sent successfully!</div>
+    <div *ngIf="error" class="popup error-popup">Something went wrong. Please try again.</div>
   </div>
+
 </body>

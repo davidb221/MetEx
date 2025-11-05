@@ -127,3 +127,21 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
   outline: none;
 }
+
+.popup {
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.success-popup {
+  background: #d4edda;
+  color: #155724;
+}
+
+.error-popup {
+  background: #f8d7da;
+  color: #721c24;
+}
