@@ -2,8 +2,9 @@
 
   <p class="intro">
     At MetEx Delivery, we specialize in providing fast, secure, and reliable shipping solutions tailored to both individuals and businesses.
-    Whether you're sending packages locally or internationally, from the U.S. to Africa and beyond, our logistics network ensures timely and safe deliveries every time.
-    Customers enjoy the convenience of door-to-door service, with scheduled pickups available across select regions. Once our physical location opens, in-person package drop-off will become standard with scheduled pickup remaining as a premium option.
+    Whether you're sending packages locally or internationally, our logistics network ensures timely and safe deliveries every time.
+    Customers enjoy the convenience of door-to-door service, with scheduled pickups available across select regions. In-person package drop-off is available at Irving, TX in the Dallas-Fort Worth Metroplex.
+    We also offer scheduled pickup within Dallas-Fort Worth and Seattle for an additional fee.
     From providing business shipping solutions to offering same-day local courier services, MetEx is your trusted partner in seamless shipping and logistics.
     With a commitment to excellence, innovation, and customer satisfaction, we deliver more than just packages, we deliver peace of mind.
   </p>
@@ -17,8 +18,9 @@
           <label for="from">From:</label>
           <select [(ngModel)]="fromLocation" name="fromLocation" required>
             <option value="" disabled selected>Select a location</option>
-            <option value="Seattle">Seattle</option>
-            <option value="Dallas-Fort Worth">Dallas-Fort Worth</option>
+            <option value="Seattle">Seattle (Scheduled Pickup - Additional Charges Apply)</option>
+            <option value="Dallas-Fort Worth">Dallas-Fort Worth (Scheduled Pickup - Additional Charges Apply)</option>
+            <option value="Physical Dropoff Irving">400 Las Colinas Blvd East Suite 300 Irving, TX, 75039 (Drop off)</option>
           </select>
         </div>
 
@@ -26,7 +28,7 @@
           <label for="to">To:</label>
           <select [(ngModel)]="toLocation" name="toLocation" required>
             <option value="" disabled selected>Select a destination</option>
-            <option value="Democratic Republic of Congo">Democratic Republic of Congo</option>
+            <option value="Clinic Bondeko">Clinic Bondeko, Democratic Republic of Congo</option>
             <option value="Ivory Coast">Ivory Coast</option>
           </select>
         </div>
@@ -56,10 +58,22 @@
         <div class="form-group">
           <label>Declared Value (USD):</label>
           <input type="number" [(ngModel)]="declaredValue" name="declaredValue" min="0" required />
-          <small *ngIf="declaredValue > 100" style="color: #ffcccc; font-weight: 600;">
+          <small *ngIf="declaredValue > 100" style="color: #ff0000; font-weight: 600;">
             * Insurance is required for items valued over $100.
           </small>
         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          placeholder="Enter your email to receive your quote"
+        />
       </div>
 
       <button type="submit">Submit Request</button>

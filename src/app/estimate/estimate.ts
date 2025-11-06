@@ -17,6 +17,7 @@ export class Estimate {
   height = 0;
   weight = 0;
   declaredValue = 0;
+  email = "";
 
   success = false;
   error = false;
@@ -39,6 +40,8 @@ export class Estimate {
     formData.append('Height (in)', this.height.toString());
     formData.append('Weight (lbs)', this.weight.toString());
     formData.append('Declared Value (USD)', this.declaredValue.toString());
+    formData.append('Email', this.email);
+    formData.append('replyto', this.email);
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
