@@ -65,7 +65,7 @@
   max-width: 800px;
   margin: 60px auto;
   padding: 40px 20px;
-  background-color: #0e4fa6; /* dark background */
+  background-color: #0e4fa6;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: #ffffff;
@@ -79,7 +79,7 @@
 }
 
 .contact-form {
-  background-color: transparent !important; /* override any inherited background */
+  background-color: transparent !important;
   padding: 0;
   border-radius: 0;
 }
@@ -162,4 +162,41 @@
 
 .contact-info a:hover {
   color: #003366;
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+  .faq-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 0 10px;
+  }
+
+  .contact-form-container,
+  .contact-info-section {
+    width: 90%;               /* Keeps it smaller than full screen */
+    max-width: 600px;         /* Prevents it from expanding too wide */
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;   /* Ensures padding doesn’t increase width */
+    overflow-x: hidden;       /* Prevents horizontal scroll if something leaks */
+  }
+
+  .form-group {
+    width: 100%;              /* Prevents overflow inside container */
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;   /* Keeps borders/padding inside width */
+  }
+
+  .submit-button {
+    width: 100%;              /* Looks better on small screens */
+    padding: 12px 0;
+  }
 }

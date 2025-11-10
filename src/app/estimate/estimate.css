@@ -145,3 +145,11 @@ select:focus {
   background: #f8d7da;
   color: #721c24;
 }
+
+/*Mobile*/
+@media (max-width: 768px) {
+  .intro {
+    display: none;
+  }
+
+}
