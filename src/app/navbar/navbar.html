@@ -1,15 +1,23 @@
 <div class="navbar">
   <div class="nav-content">
-    <div class="nav-item">
+    <div class="nav-left">
       <a routerLink="/">
-        <img src="assets\MetExLogo.png" alt="MetEx Logo" class="logo" />
+        <img src="assets/MetExLogo.png" alt="MetEx Logo" class="logo" />
       </a>
-      </div>
-    <div class="nav-item"><a routerLink="/">Home</a></div>
-    <div class="nav-item"><a routerLink="/estimate">Shipping</a></div>
-    <div class="nav-item"><a routerLink="/about">About MetEx</a></div>
-    <div class="nav-item"><a routerLink="/faq">Support</a></div>
+    </div>
+
+    <div class="hamburger" (click)="toggleMenu()">
+      &#9776;
+    </div>
+
+    <div class="nav-links" [class.active]="menuOpen">
+      <a routerLink="/" (click)="menuOpen = false">Home</a>
+      <a routerLink="/estimate" (click)="menuOpen = false">Shipping</a>
+      <a routerLink="/about" (click)="menuOpen = false">About MetEx</a>
+      <a routerLink="/faq" (click)="menuOpen = false">Support</a>
+    </div>
   </div>
 </div>
+
 
 <!--<li class="navitem"><a href="#">Tracking</a></li>-->

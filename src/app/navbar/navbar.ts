@@ -12,4 +12,10 @@ export class Navbar {
   constructor() {}
 
   ngOnInit() {}
+
+   menuOpen = false; 
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
 }
