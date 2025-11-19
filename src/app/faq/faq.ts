@@ -23,7 +23,7 @@ export class Faq {
     },
     {
       question: 'Do you offer pickup services in Dallas-Fort Worth?',
-      answer: 'Absolutely. We provide pickup across the DFW metroplex. You can schedule a pickup by contacting customer service through phone or email.',
+      answer: 'Absolutely. We provide pickup across the DFW metroplex for an additional charge. You can schedule a pickup by contacting customer service through phone or email.',
       open: false
     },
     {
