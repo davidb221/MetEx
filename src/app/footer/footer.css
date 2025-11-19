@@ -23,6 +23,7 @@ body {
   flex: 1;
   min-width: 20%;
   margin: 1%;
+  text-align: center;
 }
 
 .footer-column h4 {
@@ -60,7 +61,7 @@ hr {
 }
 
 .footer-bottom {
-  text-align: left;
+  text-align: center;
   font-size: 0.85em;
 }
 
@@ -74,4 +75,21 @@ hr {
     padding-left: 5%;
     padding-right: 5%;
   }
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00aaff; 
 }
