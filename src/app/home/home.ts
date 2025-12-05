@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { RouterModule} from '@angular/router';
-import { Location } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +9,10 @@ import { Location } from '@angular/common';
   styleUrl: './home.css'
 })
 export class Home {
-  private location = inject(Location);
+  private baseHref = inject(APP_BASE_HREF) || '';
   
-  planeImage = this.getAssetPath('assets/plane.png');
-  truckImage = this.getAssetPath('assets/truck.png');
-  warehouseImage = this.getAssetPath('assets/warehouse.png');
-  packageDeliveredImage = this.getAssetPath('assets/packageDelivered.png');
-  
-  private getAssetPath(path: string): string {
-    return this.location.prepareExternalUrl(path);
-  }
+  planeImage = this.baseHref + 'assets/plane.png';
+  truckImage = this.baseHref + 'assets/truck.png';
+  warehouseImage = this.baseHref + 'assets/warehouse.png';
+  packageDeliveredImage = this.baseHref + 'assets/packageDelivered.png';
 }
