@@ -68,8 +68,12 @@
 
 /*Mobile*/
 @media (max-width: 768px) {
-  .reverse-this {
+  .highlight-section {
     flex-direction: column-reverse;
     text-align: center;
+  }
+
+  .mobile-image-reverse {
+    order: -1;
   }
 }
