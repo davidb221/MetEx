@@ -158,9 +158,8 @@
 
 /*Mobile*/
 @media (max-width: 768px) {
-  .reverse-this {
+  .mobile-reverse-image {
     flex-direction: column-reverse;
-    text-align: center;
   }
 
   .feature-text {
