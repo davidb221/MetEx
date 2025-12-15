@@ -1,63 +1,60 @@
-<body>
-  <section class="faq-container">
-    <h1>Frequently Asked Questions</h1>
+<section class="faq-container">
+  <h1>Frequently Asked Questions</h1>
 
-    <div class="faq" *ngFor="let faq of faqs; let i = index">
-      <button
-        class="faq-question"
-        (click)="toggleFaq(i)"
-        [attr.aria-expanded]="faq.open"
-      >
-        {{ faq.question }}
-        <span class="icon">{{ faq.open ? '−' : '+' }}</span>
-      </button>
+  <div class="faq" *ngFor="let faq of faqs; let i = index">
+    <button
+      class="faq-question"
+      (click)="toggleFaq(i)"
+      [attr.aria-expanded]="faq.open"
+    >
+      {{ faq.question }}
+      <span class="icon">{{ faq.open ? '−' : '+' }}</span>
+    </button>
 
-      <div class="faq-answer" [class.open]="faq.open">
-        <p>{{ faq.answer }}</p>
-      </div>
+    <div class="faq-answer" [class.open]="faq.open">
+      <p>{{ faq.answer }}</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact-form-container">
-    <h2>Contact Us</h2>
-    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" method="POST" class="contact-form" novalidate>
-      <input type="hidden" name="access_key" value="1788301e-86ea-4937-8d7e-fda0abf9d77a" />
-      <input type="hidden" name="from_name" value="MetEx Contact Form" />
+<section class="contact-form-container">
+  <h2>Contact Us</h2>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" method="POST" class="contact-form" novalidate>
+    <input type="hidden" name="access_key" value="1788301e-86ea-4937-8d7e-fda0abf9d77a" />
+    <input type="hidden" name="from_name" value="MetEx Contact Form" />
 
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" name="name" ngModel required />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" ngModel required />
-      </div>
-
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" ngModel required />
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea name="message" ngModel rows="5" required></textarea>
-      </div>
-
-      <button type="submit" class="submit-button">Send Message</button>
-    </form>
-
-    <div *ngIf="success" class="popup success-popup">Message sent successfully!</div>
-    <div *ngIf="error" class="popup error-popup">Something went wrong. Please try again.</div>
-  </section>
-
-  <section id="contact-section" class="contact-info-section">
-    <h2>Contact Us!</h2>
-    <div class="contact-info">
-      <p><strong>Phone:</strong> <a href="tel:+14698448393"> (469) 844-8393</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/12157797058" target="_blank"> (215) 779-7058</a></p>
-      <p><strong>Email:</strong> <a href="mailto:info@metexdelivery.com"> info@metexdelivery.com</a></p>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" ngModel required />
     </div>
-  </section>
 
-</body>  
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" ngModel required />
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" ngModel required />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea name="message" ngModel rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-button">Send Message</button>
+  </form>
+
+  <div *ngIf="success" class="popup success-popup">Message sent successfully!</div>
+  <div *ngIf="error" class="popup error-popup">Something went wrong. Please try again.</div>
+</section>
+
+<section id="contact-section" class="contact-info-section">
+  <h2>Contact Us!</h2>
+  <div class="contact-info">
+    <p><strong>Phone:</strong> <a href="tel:+14698448393"> (469) 844-8393</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/12157797058" target="_blank"> (215) 779-7058</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@metexdelivery.com"> info@metexdelivery.com</a></p>
+  </div>
+</section>
