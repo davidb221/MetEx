@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "baseHref": "/",
+            "baseHref": "/MetEx/",
             "outputPath": "docs",
             "polyfills": [
               "zone.js"
